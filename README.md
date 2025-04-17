@@ -24,6 +24,9 @@ Your folder structure should look like this:
 ```
  |-E115-BirdWatchingApp-Internal
      |-images
+     |-notebooks
+     |-references
+     |-reports
      |-src
        |---api-service
        |---frontend-react
@@ -117,9 +120,9 @@ Fast API gives interactive API documentation and an exploration tool for free.
  
 Keep this container running while setting up the backend API service and frontend apps.
 
-**React Frontend Setup**
+**React Frontend Container**
 
-Initial Setup
+Setup React Frontend Container:
 
 1. Navigate to the React frontend directory:
    
@@ -135,18 +138,28 @@ npm install
 
 4. Launch Development Server
 
-	1	Start the development server:
+- Start the development server:
+   
 npm run dev
 
-	2	View the app at: http://localhost:3000
+- View the app at: http://localhost:3000
    
 Note: Make sure the API service container is running for full functionality
 
 **Docker Cleanup**
 
-Make sure you do not have any running containers and clear up an unused images
+Make sure you do not have any running containers and clear up an unused images. Complete the following steps: 
 
-	•	Run docker container ls
-	•	Stop any container that is running
-	•	Run docker system prune
-	•	Run docker image ls
+1. Run
+
+docker container ls
+
+2. Stop any container that is running
+
+3. Run
+
+docker system prune
+
+4. Run
+
+docker image ls
