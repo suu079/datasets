@@ -1,0 +1,26 @@
+name: Pre-Commit Checks
+
+# Define the trigger event
+on:
+  push:
+    branches: [main]
+# List the jobs
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install pre-commit
+        run: |
+          pip install pre-commit
+          pre-commit install-hooks
+
+      - name: Run pre-commit hooks
+        run: pre-commit run --all-files
